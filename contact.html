@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | VerdaVein</title>
+    <style>
+        /* Latin-inspired theme with green tones */
+        :root {
+            --primary-color: #2a5c45;
+            --secondary-color: #4a7c59;
+            --accent-color: #8ba888;
+            --light-color: #e8f4ea;
+            --dark-color: #1a3a2a;
+            --text-color: #333;
+            --text-light: #f8f8f8;
+            --gold-accent: #c0a062;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(42, 92, 69, 0.9), rgba(42, 92, 69, 0.9)), 
+                        url('https://images.unsplash.com/photo-1600566752225-5376a8b8e267') center/cover;
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 2px;
+            color: var(--gold-accent);
+        }
+
+        .slogan {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(26, 58, 42, 0.9);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold-accent);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--gold-accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 3rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        .contact-point {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-point h4 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Form Styles */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        .contact-details {
+            margin-top: 1.5rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 1rem;
+            color: var(--gold-accent);
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--dark-color);
+        }
+
+        /* Map Styles */
+        .map-container {
+            height: 400px;
+            width: 100%;
+            margin-top: 3rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* FAQ Styles */
+        .faq-item {
+            margin-bottom: 2rem;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Team Styles */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .team-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+        }
+
+        .team-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info p {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .footer-links h3 {
+            color: var(--gold-accent);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .footer-contact h3 {
+            color: var(--gold-accent);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 1rem;
+            color: var(--gold-accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .slogan {
+                font-size: 1.3rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">VerdaVein</a>
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="header-content">
+            <h1 class="logo">VerdaVein</h1>
+            <p class="slogan">Green. Water. Harmony.</p>
+            <h2>Contact Our Irrigation Specialists</h2>
+            <p>Connect with our team of garden architects and sustainability experts</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h1>How Can We Help You?</h1>
+            <p>At VerdaVein, we believe in building lasting relationships with our clients through open communication and personalized service. Whether you're a garden architect planning a new project, a developer seeking sustainable irrigation solutions, or a homeowner looking to enhance your landscape, our team is ready to assist you.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> East 14th Street, New York, NY 10003, United States</p>
+                        <p><i class="fas fa-phone"></i> (212) 555-7878</p>
+                        <p><i class="fas fa-envelope"></i> info@verdavein.com</p>
+                        <p><i class="fas fa-clock"></i> Monday-Friday: 9am-6pm EST</p>
+                        <p><i class="fas fa-calendar"></i> Saturday: By appointment only</p>
+                    </div>
+                    
+                    <h3>Service Areas</h3>
+                    <p>We serve clients throughout the Northeastern United States with project capabilities nationwide. International inquiries welcome.</p>
+                    
+                    <h3>Emergency Contact</h3>
+                    <p>For urgent irrigation system issues outside business hours, call our 24/7 emergency line: (212) 555-7879</p>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="residential">Residential Garden Systems</option>
+                                <option value="commercial">Commercial Landscape Solutions</option>
+                                <option value="agriculture">Sustainable Agriculture</option>
+                                <option value="smart">Smart Technology</option>
+                                <option value="restoration">Historical Restoration</option>
+                                <option value="urban">Urban/Rooftop Gardens</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.015468384622!2d-73.9881179243384!3d40.73250097139192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2599916409d6d%3A0x1f8a1a6e6a9e6a1a!2sEast%2014th%20Street%2C%20New%20York%2C%20NY%2010003%2C%20USA!5e0!3m2!1sen!2s!4v1624896000000!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="contact-point">
+                <h4>1. What information should I include in my initial inquiry?</h4>
+                <p>For the most accurate response, please include: your property location, approximate size of the area needing irrigation, type of landscape (residential, commercial, agricultural), any specific water conservation goals, and your timeline for the project. For existing systems needing service, include the system age, manufacturer if known, and a description of the issue. Photos of your property or the problem area are always helpful and can be attached to your message.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>2. How quickly can I expect a response to my inquiry?</h4>
+                <p>We typically respond to all inquiries within 1 business day during our standard operating hours (Monday-Friday, 9am-6pm EST). During peak seasons (spring and early summer), response times may extend to 2 business days. For urgent matters, please call our main line and indicate that you have a time-sensitive request. Emergency service requests are prioritized and typically receive a response within 2 hours.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>3. Do you offer free consultations?</h4>
+                <p>We provide complimentary initial phone or email consultations to discuss your project scope and determine if our services are a good fit. For on-site consultations, we charge a modest fee that is later credited toward your project if you choose to work with us. The consultation fee covers our travel time and the expert assessment provided by our irrigation specialists. Detailed design consultations require a separate design agreement.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>4. What are your service area boundaries?</h4>
+                <p>Our primary service area includes New York, New Jersey, Connecticut, and Pennsylvania. We regularly take projects throughout the Northeast and have completed installations as far south as Virginia and as far north as Maine. For projects outside our standard service area, travel fees may apply. International projects are evaluated on a case-by-case basis, with particular expertise in Mediterranean climate zones that benefit from our Latin-inspired irrigation techniques.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>5. How do you handle COVID-19 safety protocols?</h4>
+                <p>We follow all local health guidelines and implement additional safety measures including: mandatory vaccination for all field staff, mask-wearing during indoor consultations, contactless payment options, and sanitization of all equipment between job sites. Virtual consultations are available for clients who prefer remote service. Our office staff continues to work with flexible arrangements to ensure business continuity while prioritizing health and safety.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Our Contact Philosophy</h2>
+            <p>At VerdaVein, we've built our reputation on responsive, knowledgeable customer service that begins with your first contact and continues throughout your relationship with us. Here's what sets our communication approach apart:</p>
+            
+            <div class="contact-point">
+                <h4>1. Dedicated Project Coordinators</h4>
+                <p>When you contact VerdaVein, you'll be assigned a personal project coordinator who will serve as your single point of contact throughout the entire process. This ensures continuity and eliminates the frustration of repeating information to multiple representatives. Your coordinator will have in-depth knowledge of irrigation systems and our service offerings, enabling them to answer most questions immediately without transferring you to other departments.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>2. Multilingual Support</h4>
+                <p>To serve our diverse clientele, we offer support in Spanish, Italian, and French in addition to English. Our multilingual staff includes native speakers who understand both the language and cultural nuances of irrigation practices in different regions. This capability is particularly valuable for our international clients and those working with historical irrigation systems where original documentation may be in other languages.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>3. Technical Documentation</h4>
+                <p>We provide comprehensive technical documentation with every project, including system schematics, maintenance schedules, and water usage projections. These documents are available in both digital and printed formats, with digital copies stored in your secure client portal for anytime access. Our documentation follows ancient Roman principles of clarity and precision while incorporating modern CAD technologies for accuracy.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>4. After-Hours Accessibility</h4>
+                <p>Understanding that irrigation issues don't always occur during business hours, we maintain an emergency contact line staffed by knowledgeable technicians 24/7/365. For non-urgent matters, our online contact form is monitored even outside standard business hours, and you can expect a response first thing the next business day. We also offer scheduled call-back services for clients in different time zones.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>5. Educational Resources</h4>
+                <p>We believe informed clients make the best partners, so we provide extensive educational materials about irrigation principles, water conservation, and system maintenance. These include video tutorials, detailed blog posts, and seasonal watering guides. Many of these resources are available before you even become a client, as part of our commitment to promoting sustainable water use in all landscapes.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Meet Our Contact Team</h2>
+            <p>Our customer service team combines technical expertise with genuine passion for sustainable irrigation solutions. Get to know the professionals who will be handling your inquiry:</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-info">
+                        <h4>Marcus Aurelius</h4>
+                        <p>Client Relations Director</p>
+                        <p>15 years irrigation experience</p>
+                        <p>marcus@verdavein.com</p>
+                        <p>Ext. 101</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-info">
+                        <h4>Livia Drusilla</h4>
+                        <p>Senior Project Consultant</p>
+                        <p>Specializes in historical systems</p>
+                        <p>livia@verdavein.com</p>
+                        <p>Ext. 102</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-info">
+                        <h4>Gaius Plinius</h4>
+                        <p>Technical Support Lead</p>
+                        <p>Smart systems specialist</p>
+                        <p>gaius@verdavein.com</p>
+                        <p>Ext. 103</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-info">
+                        <h4>Claudia Hortensia</h4>
+                        <p>Customer Service Manager</p>
+                        <p>Bilingual (English/Spanish)</p>
+                        <p>claudia@verdavein.com</p>
+                        <p>Ext. 104</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Additional Contact Options</h2>
+            
+            <div class="contact-point">
+                <h4>1. Corporate Headquarters</h4>
+                <p>For formal correspondence, investor relations, or media inquiries, please address mail to: VerdaVein Corporate Office, Attn: [Department Name], East 14th Street, New York, NY 10003. All packages and deliveries should be sent to our loading dock at the rear of the building, with prior notification to our receiving department at receiving@verdavein.com or (212) 555-7880.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>2. Employment Inquiries</h4>
+                <p>We're always interested in connecting with talented irrigation specialists, landscape architects, and customer service professionals. Please send resumes and portfolio samples to careers@verdavein.com. For internship opportunities, specify "Internship Application" in the subject line. Due to volume, we can only respond to candidates who meet our current hiring needs, but all applications are kept on file for one year.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>3. Vendor & Partnership Opportunities</h4>
+                <p>Suppliers of high-quality irrigation components and sustainable landscaping materials are invited to submit product information to procurement@verdavein.com. Please include detailed specifications, pricing sheets, and sustainability certifications. We prioritize partnerships with suppliers who share our commitment to environmental stewardship and who can meet our exacting quality standards.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>4. Educational Institutions</h4>
+                <p>We welcome collaborations with universities, botanical gardens, and research institutions working on water conservation technologies. Our experts are available for guest lectures, research partnerships, and curriculum development. Please contact education@verdavein.com with details about your proposed collaboration. We particularly encourage inquiries related to ancient irrigation techniques and their modern applications.</p>
+            </div>
+            
+            <div class="contact-point">
+                <h4>5. Press & Media Relations</h4>
+                <p>Members of the press should direct inquiries to press@verdavein.com or call our media line at (212) 555-7881. We can provide expert commentary on water conservation, sustainable landscaping trends, and historical irrigation methods. Please allow 48 hours for response to media requests. For urgent deadlines, specify "Time-Sensitive" in your subject line and call to follow up.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">VerdaVein</div>
+                <p>Green. Water. Harmony.</p>
+                <p>Premium irrigation systems rooted in ancient wisdom, designed for modern sustainability.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#services">Our Services</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#gallery">Project Gallery</a></li>
+                    <li><a href="index.html#testimonials">Client Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">GDPR Compliance</a></li>
+                    <li><a href="#">CCPA Notice</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> East 14th Street, New York, NY 10003, United States</p>
+                <p><i class="fas fa-phone"></i> (212) 555-7878</p>
+                <p><i class="fas fa-envelope"></i> info@verdavein.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm EST</p>
+                <p><i class="fas fa-calendar"></i> Saturday: By appointment only</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 VerdaVein Irrigation Systems. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Simple validation
+            if(name === '' || email === '' || message === '') {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            if(!validateEmail(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // If validation passes, show success message
+            alert('Thank you for your message! We will respond within 1 business day.');
+            this.reset();
+        });
+        
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>

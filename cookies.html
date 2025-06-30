@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy | VerdaVein</title>
+    <style>
+        /* Latin-inspired theme with green tones */
+        :root {
+            --primary-color: #2a5c45;
+            --secondary-color: #4a7c59;
+            --accent-color: #8ba888;
+            --light-color: #e8f4ea;
+            --dark-color: #1a3a2a;
+            --text-color: #333;
+            --text-light: #f8f8f8;
+            --gold-accent: #c0a062;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(42, 92, 69, 0.9), rgba(42, 92, 69, 0.9)), 
+                        url('https://images.unsplash.com/photo-1600566752225-5376a8b8e267') center/cover;
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 2px;
+            color: var(--gold-accent);
+        }
+
+        .slogan {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(26, 58, 42, 0.9);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold-accent);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--gold-accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 3rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        .cookie-point {
+            margin-bottom: 2.5rem;
+        }
+
+        .cookie-point h4 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 1.5rem;
+            z-index: 1000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 1rem;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cookie-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-accept {
+            background-color: var(--gold-accent);
+            color: var(--dark-color);
+            border: none;
+        }
+
+        .cookie-decline {
+            background-color: transparent;
+            color: var(--gold-accent);
+            border: 2px solid var(--gold-accent);
+        }
+
+        .cookie-accept:hover {
+            background-color: var(--light-color);
+        }
+
+        .cookie-decline:hover {
+            background-color: rgba(192, 160, 98, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .footer-links h3 {
+            color: var(--gold-accent);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .footer-contact h3 {
+            color: var(--gold-accent);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 1rem;
+            color: var(--gold-accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .slogan {
+                font-size: 1.3rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .cookie-consent {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .cookie-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .cookie-btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">VerdaVein</a>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="header-content">
+            <h1 class="logo">VerdaVein</h1>
+            <p class="slogan">Green. Water. Harmony.</p>
+            <h2>Cookie Policy</h2>
+            <p>Transparency in our digital practices, rooted in ancient principles of honesty</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <p>Last Updated: June 28, 2023</p>
+            
+            <p>This Cookie Policy explains how VerdaVein Irrigation Systems ("Company", "we", "us", and "our") uses cookies and similar technologies to recognize you when you visit our website at verdavein.com ("Website"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.</p>
+            
+            <p>In some cases we may use cookies to collect personal information, or that becomes personal information if we combine it with other information. In such cases our Privacy Policy (https://verdavein.com/privacy.html) will apply in addition to this Cookie Policy.</p>
+            
+            <h2>1. What Are Cookies?</h2>
+            <div class="cookie-point">
+                <h4>1.1 Definition of Cookies</h4>
+                <p>Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners to make their websites work, or to work more efficiently, as well as to provide reporting information. Cookies set by the website owner (in this case, VerdaVein) are called "first party cookies". Cookies set by parties other than the website owner are called "third party cookies". Third party cookies enable third party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics).</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>1.2 How We Use Cookies</h4>
+                <p>We use first and third party cookies for several reasons. Some cookies are required for technical reasons in order for our Website to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other cookies enable us to track and target the interests of our users to enhance the experience on our Website. Third parties serve cookies through our Website for advertising, analytics, and other purposes. The specific types of first and third party cookies served through our Website and the purposes they perform are described in detail below.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>1.3 Cookie Duration</h4>
+                <p>The length of time a cookie remains on your computer or mobile device depends on whether it is a "persistent" or "session" cookie. Session cookies last only until you close your browser. Persistent cookies remain on your computer or mobile device until they expire or are deleted. We use both session and persistent cookies on our Website. The expiration period for persistent cookies varies according to their purpose - some expire after a few minutes while others may remain for several years unless manually deleted.</p>
+            </div>
+            
+            <h2>2. Types of Cookies We Use</h2>
+            <div class="cookie-point">
+                <h4>2.1 Essential Website Cookies</h4>
+                <p>These cookies are strictly necessary to provide you with services available through our Website and to use some of its features, such as access to secure areas. Because these cookies are strictly necessary to deliver the Website, you cannot refuse them without impacting how our site functions. You can block or delete them by changing your browser settings, but this may affect your ability to use certain features of our Website. Examples include cookies that remember your cookie preferences, maintain your session during navigation, or enable load balancing during high traffic periods.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>2.2 Performance and Analytics Cookies</h4>
+                <p>These cookies collect information about how visitors use our Website, such as which pages visitors go to most often and if they receive error messages. These cookies don't collect information that identifies a visitor. All information these cookies collect is aggregated and therefore anonymous. It is only used to improve how our Website works. We use Google Analytics cookies to understand how users engage with our site, which helps us improve its structure and content. These cookies may be set by third-party services we've added to our pages.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>2.3 Functionality Cookies</h4>
+                <p>These cookies enable our Website to provide enhanced functionality and personalization. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies, then some or all of these services may not function properly. Examples include cookies that remember your language preference, maintain your preferences across visits, or enable embedded content like videos to function properly. These cookies cannot track your browsing activity on other websites.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>2.4 Targeting and Advertising Cookies</h4>
+                <p>These cookies may be set through our site by our advertising partners to build a profile of your interests and show you relevant advertisements on other sites. They work by uniquely identifying your browser and device. If you do not allow these cookies, you will experience less targeted advertising. We use these cookies sparingly and primarily for retargeting campaigns that help potential clients discover our premium irrigation solutions. These cookies may track your visits to our site and other websites to measure advertising effectiveness.</p>
+            </div>
+            
+            <h2>3. Managing Cookies</h2>
+            <div class="cookie-point">
+                <h4>3.1 Browser Controls</h4>
+                <p>Most web browsers allow some control of most cookies through the browser settings. You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our Website though your access to some functionality and areas may be restricted. The methods for managing cookies vary by browser and version. Generally, you can find these controls in the "options" or "preferences" menu of your browser. To understand these settings, consult your browser's help documentation or visit www.allaboutcookies.org.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>3.2 Disabling Cookies</h4>
+                <p>If you disable cookies entirely, our Website will continue to function but certain features may not work properly. For example, you may not be able to stay logged in to your account, your preferences may not be saved between visits, and some interactive features may be unavailable. Essential cookies cannot be disabled as they are required for basic site functionality. If you delete all cookies, any preferences you've set will be lost and you may need to re-enter information on subsequent visits. Some third-party cookies can be managed through opt-out programs.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>3.3 Do Not Track Signals</h4>
+                <p>Our Website does not currently respond to Do Not Track (DNT) signals. However, we provide you with the ability to manage cookies as described in this policy. We await the development of industry standards for how DNT signals should be interpreted and what actions should be taken by websites. In the meantime, you can use the cookie management tools we provide or adjust your browser settings to control cookie preferences. We are committed to transparency and will update our practices as standards evolve in this area.</p>
+            </div>
+            
+            <h2>4. Specific Cookies We Use</h2>
+            <div class="cookie-point">
+                <h4>4.1 Google Analytics</h4>
+                <p>We use Google Analytics to analyze the use of our Website. Google Analytics gathers information about website use by means of cookies. The information gathered is used to create reports about the use of our Website. Google's privacy policy is available at https://policies.google.com/privacy. The specific Google Analytics cookies we use include _ga (used to distinguish users, expires after 2 years), _gid (used to distinguish users, expires after 24 hours), and _gat (used to throttle request rate, expires after 1 minute). You can opt-out of Google Analytics tracking using their browser add-on.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>4.2 HubSpot Cookies</h4>
+                <p>We use HubSpot for our customer relationship management and marketing automation. HubSpot sets several cookies that help us understand visitor behavior and manage our contacts. These include __hssc (hubspot session cookie, expires after 30 minutes), __hssrc (session cookie, expires when browser closes), and __hstc (main hubspot tracking cookie, expires after 13 months). These cookies may track information such as how you arrived at our site, what content you view, and whether you complete forms. HubSpot's privacy policy can be found at https://legal.hubspot.com/privacy-policy.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>4.3 Facebook Pixel</h4>
+                <p>We use Facebook Pixel to measure the effectiveness of our advertising and to show you relevant ads on Facebook. This tool uses cookies to track visitors between our site and Facebook. The _fbp cookie is used to identify browsers for advertising purposes (expires after 3 months). The fr cookie contains a unique browser and user ID for tracking (expires after 3 months). You can adjust your Facebook ad preferences or opt out of seeing ads based on your activity on our site through your Facebook settings. Facebook's data policy is available at https://www.facebook.com/policy.php.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>4.4 LinkedIn Insight Tag</h4>
+                <p>The LinkedIn Insight Tag is a piece of lightweight JavaScript code that we use to track conversions and retarget website visitors. The tag drops a cookie (lidc) that LinkedIn uses for routing (expires after 1 day) and another (bscookie) that is a secure browser ID cookie (expires after 2 years). This helps us measure the effectiveness of our LinkedIn advertising campaigns. LinkedIn members can control the use of their personal data for advertising purposes in their account settings. LinkedIn's privacy policy is available at https://www.linkedin.com/legal/privacy-policy.</p>
+            </div>
+            
+            <h2>5. Cookie Consent</h2>
+            <div class="cookie-point">
+                <h4>5.1 Consent Mechanism</h4>
+                <p>We implement a cookie consent mechanism that allows you to accept or decline non-essential cookies when you first visit our Website. Essential cookies cannot be declined as they are necessary for basic functionality. The consent mechanism complies with GDPR, CCPA, and other privacy regulations. Your preferences are stored in a cookie (verda_cookie_consent) so we can remember your choices on subsequent visits (expires after 1 year). You can change your cookie preferences at any time by clicking the "Cookie Settings" link in our footer. We do not load non-essential cookies until consent is given.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>5.2 Granular Consent Options</h4>
+                <p>Our cookie consent tool provides granular control over different categories of cookies. You can choose to accept all cookies, reject all non-essential cookies, or customize your preferences by category (e.g., accepting analytics cookies but declining advertising cookies). For each category, we provide a clear description of what the cookies do and who sets them. Your preferences are applied immediately and respected on all pages of our Website. We periodically review and update our cookie categories to ensure they remain accurate and comprehensive as our use of cookies evolves.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>5.3 Withdrawing Consent</h4>
+                <p>You can withdraw your cookie consent at any time by accessing our cookie settings through the link in the footer of any page. Withdrawing consent will stop any future processing of your data by non-essential cookies, but will not affect the lawfulness of processing based on consent before its withdrawal. Some cookies may persist until their natural expiration or until you manually delete them from your browser. After withdrawing consent, you may be prompted again to set your preferences on your next visit. Essential cookies will continue to function regardless of your consent status.</p>
+            </div>
+            
+            <h2>6. International Data Transfers</h2>
+            <div class="cookie-point">
+                <h4>6.1 Cross-Border Data Flows</h4>
+                <p>Some of our third-party cookie providers may process your data outside your country of residence, including in the United States. When we transfer your personal data to these providers, we ensure appropriate safeguards are in place to protect your data in accordance with applicable data protection laws. For transfers to countries not recognized as providing an adequate level of protection, we implement standard contractual clauses approved by the European Commission or other appropriate safeguards. You can obtain more information about these safeguards by contacting our Data Protection Officer at dpo@verdavein.com.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>6.2 EU-US Data Privacy Framework</h4>
+                <p>Where applicable, we rely on the EU-US Data Privacy Framework for transfers of personal data from the European Economic Area to the United States. Our third-party cookie providers who receive personal data from the EU have certified their compliance with the Data Privacy Framework or provide alternative appropriate safeguards. The Data Privacy Framework provides a mechanism for EU individuals to invoke binding arbitration for unresolved complaints. More information about the Data Privacy Framework can be found at https://www.dataprivacyframework.gov/.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>6.3 UK Extension</h4>
+                <p>For transfers of personal data from the UK, we rely on the UK Extension to the EU-US Data Privacy Framework where applicable. This provides similar protections for UK data subjects as the EU-US framework provides for EU data subjects. We ensure that all third-party cookie providers processing UK personal data maintain appropriate safeguards as required by UK data protection laws, including the UK GDPR. UK individuals have the right to lodge a complaint with the UK Information Commissioner's Office if they believe their data rights have been violated.</p>
+            </div>
+            
+            <h2>7. Your Rights</h2>
+            <div class="cookie-point">
+                <h4>7.1 Access and Information</h4>
+                <p>You have the right to request information about the personal data we collect through cookies and similar technologies. This includes the right to know what categories of data are collected, the purposes of processing, and the categories of third parties with whom we share the data. We provide this information transparently in this Cookie Policy, but you may request additional details by contacting us at privacy@verdavein.com. We will respond to your request within the timeframes required by applicable law, typically within 30 days for most jurisdictions.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>7.2 Correction and Deletion</h4>
+                <p>You have the right to request correction of inaccurate personal data we hold about you that was collected through cookies. You also have the right to request deletion of your personal data, subject to certain exceptions. To exercise these rights regarding cookie data, you may need to use browser tools to delete existing cookies or adjust your browser settings to prevent future cookies. For data collected by third-party cookies, you may need to exercise your rights directly with those third parties. We provide links to relevant opt-out mechanisms in this policy where available.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>7.3 Opt-Out of Sale/Sharing</h4>
+                <p>Under certain privacy laws (such as the CCPA), you may have the right to opt out of the "sale" or "sharing" of your personal information collected through cookies. While we do not sell personal information in the traditional sense, some cookie-based advertising activities may constitute "sharing" under these laws. You can opt out of such sharing by using our cookie consent tool to disable advertising cookies or by broadcasting the Global Privacy Control (GPC) signal. We honor the GPC signal as a valid opt-out preference signal for CCPA purposes.</p>
+            </div>
+            
+            <h2>8. Policy Updates</h2>
+            <div class="cookie-point">
+                <h4>8.1 Notification of Changes</h4>
+                <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. When we make material changes, we will notify you by posting the updated policy on our Website with a new "Last Updated" date at the top of this page. For significant changes that affect your rights, we may provide more prominent notice, such as a banner on our Website or direct notification for registered users. We encourage you to periodically review this page for the latest information on our use of cookies.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>8.2 Historical Versions</h4>
+                <p>We maintain archives of previous versions of this Cookie Policy for your reference. If you would like to review the version of the policy that was in effect at a particular time or compare changes between versions, please contact us at privacy@verdavein.com with your request. We typically retain policy versions for at least five years from the date they are superseded. This historical record helps demonstrate our commitment to transparency and compliance with data protection principles over time.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>8.3 Acceptance of Updated Policy</h4>
+                <p>Your continued use of our Website after we make changes to this Cookie Policy is deemed to be acceptance of those changes. If you do not agree to the updated policy, you should discontinue using our Website and clear any cookies set during your previous visits. For material changes that require new consent (such as introducing new categories of cookies), we will seek fresh consent before implementing the changes. Essential cookies will continue to be used regardless of your acceptance of policy updates as they are necessary for Website functionality.</p>
+            </div>
+            
+            <h2>9. Contact Us</h2>
+            <div class="cookie-point">
+                <h4>9.1 Questions About Cookies</h4>
+                <p>If you have any questions about our use of cookies or this Cookie Policy, please contact our Data Protection Officer at dpo@verdavein.com or by mail at VerdaVein Irrigation Systems, Attn: Data Protection Officer, East 14th Street, New York, NY 10003, United States. For general inquiries about our Website or services, please use our main contact information. We aim to respond to all cookie-related inquiries within 10 business days. If your inquiry requires more extensive investigation, we will acknowledge receipt and provide an estimated timeline for our full response.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>9.2 Complaints</h4>
+                <p>If you have a complaint about our use of cookies or handling of your personal data, we encourage you to first contact us directly so we can attempt to resolve the issue. If you are not satisfied with our response, you may have the right to lodge a complaint with the relevant supervisory authority in your jurisdiction. For EU residents, this would typically be the data protection authority in your country. For UK residents, this would be the Information Commissioner's Office (ICO). For California residents, this would be the California Attorney General's office.</p>
+            </div>
+            
+            <div class="cookie-point">
+                <h4>9.3 Accessibility</h4>
+                <p>We are committed to ensuring this Cookie Policy is accessible to individuals with disabilities. If you encounter any difficulty accessing this policy or need it in an alternative format, please contact us at accessibility@verdavein.com or call our accessibility hotline at (212) 555-7882. We can provide this policy in large print, Braille, or audio format upon request. Our cookie consent interface has been designed to meet WCAG 2.1 AA accessibility standards, with keyboard navigation, screen reader compatibility, and sufficient color contrast.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">VerdaVein</div>
+                <p>Green. Water. Harmony.</p>
+                <p>Premium irrigation systems rooted in ancient wisdom, designed for modern sustainability.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#services">Our Services</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#gallery">Project Gallery</a></li>
+                    <li><a href="index.html#testimonials">Client Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="cookies.html">Cookie Policy</a></li>
+                    <li><a href="#">GDPR Compliance</a></li>
+                    <li><a href="#">CCPA Notice</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> East 14th Street, New York, NY 10003, United States</p>
+                <p><i class="fas fa-phone"></i> (212) 555-7878</p>
+                <p><i class="fas fa-envelope"></i> info@verdavein.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm EST</p>
+                <p><i class="fas fa-calendar"></i> Saturday: By appointment only</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 VerdaVein Irrigation Systems. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="cookie-text">
+            <p>We use cookies to enhance your experience on our website, analyze site usage, and assist in our marketing efforts. By clicking "Accept", you agree to our use of cookies as described in our <a href="cookies.html" style="color: var(--gold-accent);">Cookie Policy</a>. You can manage your preferences at any time.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-accept" id="acceptCookies">Accept</button>
+            <button class="cookie-btn cookie-decline" id="declineCookies">Decline</button>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptCookies = document.getElementById('acceptCookies');
+            const declineCookies = document.getElementById('declineCookies');
+            
+            // Check if consent has already been given
+            if (!getCookie('verda_cookie_consent')) {
+                cookieConsent.style.display = 'flex';
+            }
+            
+            // Accept cookies
+            acceptCookies.addEventListener('click', function() {
+                setCookie('verda_cookie_consent', 'accepted', 365);
+                cookieConsent.style.display = 'none';
+                // Load analytics and other non-essential cookies
+                loadNonEssentialCookies();
+            });
+            
+            // Decline cookies
+            declineCookies.addEventListener('click', function() {
+                setCookie('verda_cookie_consent', 'declined', 365);
+                cookieConsent.style.display = 'none';
+                // Don't load non-essential cookies
+            });
+            
+            // Cookie helper functions
+            function setCookie(name, value, days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                const expires = "expires=" + date.toUTCString();
+                document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+            }
+            
+            function getCookie(name) {
+                const cookieName = name + "=";
+                const decodedCookie = decodeURIComponent(document.cookie);
+                const cookieArray = decodedCookie.split(';');
+                for(let i = 0; i < cookieArray.length; i++) {
+                    let cookie = cookieArray[i];
+                    while (cookie.charAt(0) === ' ') {
+                        cookie = cookie.substring(1);
+                    }
+                    if (cookie.indexOf(cookieName) === 0) {
+                        return cookie.substring(cookieName.length, cookie.length);
+                    }
+                }
+                return "";
+            }
+            
+            function loadNonEssentialCookies() {
+                // Here you would load your analytics scripts, etc.
+                console.log('Loading non-essential cookies...');
+                // Example: Load Google Analytics
+                // window.dataLayer = window.dataLayer || [];
+                // function gtag(){dataLayer.push(arguments);}
+                // gtag('js', new Date());
+                // gtag('config', 'YOUR_GA_ID');
+            }
+        });
+    </script>
+</body>
+</html>

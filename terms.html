@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | VerdaVein</title>
+    <style>
+        /* Latin-inspired theme with green tones */
+        :root {
+            --primary-color: #2a5c45;
+            --secondary-color: #4a7c59;
+            --accent-color: #8ba888;
+            --light-color: #e8f4ea;
+            --dark-color: #1a3a2a;
+            --text-color: #333;
+            --text-light: #f8f8f8;
+            --gold-accent: #c0a062;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(42, 92, 69, 0.9), rgba(42, 92, 69, 0.9)), 
+                        url('https://images.unsplash.com/photo-1600566752225-5376a8b8e267') center/cover;
+            color: var(--text-light);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 2px;
+            color: var(--gold-accent);
+        }
+
+        .slogan {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(26, 58, 42, 0.9);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold-accent);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--gold-accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 3rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        .terms-point {
+            margin-bottom: 2.5rem;
+        }
+
+        .terms-point h4 {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .footer-links h3 {
+            color: var(--gold-accent);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        .footer-contact h3 {
+            color: var(--gold-accent);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 1rem;
+            color: var(--gold-accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .slogan {
+                font-size: 1.3rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">VerdaVein</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="cookies.html">Cookies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="header-content">
+            <h1 class="logo">VerdaVein</h1>
+            <p class="slogan">Green. Water. Harmony.</p>
+            <h2>Terms of Service</h2>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <p>Last Updated: June 28, 2023</p>
+            
+            <p>Welcome to VerdaVein Irrigation Systems ("Company", "we", "our", "us"). These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at verdavein.com (together or individually "Service") operated by VerdaVein Irrigation Systems.</p>
+            
+            <p>By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service. These Terms apply to all visitors, users and others who wish to access or use the Service.</p>
+            
+            <h2>1. General Terms</h2>
+            <div class="terms-point">
+                <h4>1.1 Acceptance of Terms</h4>
+                <p>By accessing or using any part of the Service, you agree to become bound by these Terms. If you do not agree to all the terms and conditions of this agreement, then you may not access the Service or use any services. Your continued use of or access to the Service following the posting of any changes to these Terms constitutes acceptance of those changes. We reserve the right to update, change or replace any part of these Terms by posting updates and/or changes to our website.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>1.2 Service Description</h4>
+                <p>VerdaVein provides premium irrigation system design, installation, and maintenance services for residential, commercial, and agricultural properties. Our services include consultation, system design, equipment supply, installation, and ongoing maintenance. The specific details of services provided will be outlined in individual service agreements. We reserve the right to modify or discontinue the Service (or any part or content thereof) without notice at any time.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>1.3 Eligibility</h4>
+                <p>By agreeing to these Terms, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this Service. You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright laws).</p>
+            </div>
+            
+            <h2>2. User Responsibilities</h2>
+            <div class="terms-point">
+                <h4>2.1 Account Creation</h4>
+                <p>When you create an account with us, you must provide accurate, complete, and current information at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>2.2 Prohibited Activities</h4>
+                <p>You agree not to use the Service to: (a) upload or transmit viruses or any other type of malicious code; (b) collect or track personal information of others; (c) spam, phish, or engage in unethical marketing; (d) interfere with or circumvent security features; (e) impersonate any person or entity; (f) infringe any copyright or intellectual property rights. We reserve the right to terminate your use of the Service for violating any of the prohibited uses.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>2.3 Content Responsibility</h4>
+                <p>You are solely responsible for any content you submit, post, display or otherwise make available through the Service, including its legality, reliability, and appropriateness. By posting Content, you represent that you have the right to distribute such Content and that it does not violate any third-party rights. We may, but have no obligation to, monitor, edit or remove Content that we determine in our sole discretion to be unlawful, offensive, threatening, or otherwise objectionable.</p>
+            </div>
+            
+            <h2>3. Service Agreements</h2>
+            <div class="terms-point">
+                <h4>3.1 Service Contracts</h4>
+                <p>All professional services provided by VerdaVein are governed by individual service agreements that outline scope of work, timelines, payment terms, and warranties. These Terms of Service apply generally to our website and any services, while specific service agreements will contain additional terms relevant to particular projects. In case of any conflict between these Terms and a service agreement, the service agreement shall prevail for matters relating to that specific engagement.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>3.2 Project Specifications</h4>
+                <p>All service specifications, including but not limited to system designs, equipment selections, and installation timelines, are subject to change based on site conditions, material availability, and other factors beyond our control. We will make reasonable efforts to notify clients of any significant changes to project specifications and obtain approval for changes that affect project cost or timeline. Final specifications will be documented in project change orders when applicable.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>3.3 Site Preparation</h4>
+                <p>Client agrees to prepare the site prior to our arrival as specified in the service agreement, including but not limited to: marking underground utilities, clearing work areas, securing necessary permits, and providing access to water and electricity. Additional charges may apply if our crew is delayed or unable to work due to unprepared sites. Client is responsible for any damage to unmarked utilities or property features not identified in the project documentation.</p>
+            </div>
+            
+            <h2>4. Payments & Billing</h2>
+            <div class="terms-point">
+                <h4>4.1 Pricing Structure</h4>
+                <p>Our pricing is based on the scope of work outlined in service agreements and may include design fees, equipment costs, installation labor, and other expenses. Prices are subject to change without notice, though pricing for specific projects will be locked in upon signing a service agreement. We reserve the right to modify or discontinue any service at any time without notice at our sole discretion. All pricing is in US dollars unless otherwise specified.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>4.2 Payment Terms</h4>
+                <p>Payment terms will be specified in individual service agreements and typically require a deposit to commence work, progress payments during installation, and final payment upon completion. Late payments may be subject to interest charges of 1.5% per month (18% annually) or the maximum rate allowed by law. Client agrees to pay all reasonable expenses (including attorneys' fees) incurred in collecting overdue amounts. All payments are non-refundable except as expressly stated in these Terms or the service agreement.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>4.3 Taxes</h4>
+                <p>Client is responsible for all sales, use, and excise taxes, and any other similar taxes, duties, and charges of any kind imposed by any federal, state, or local governmental entity on any amounts payable by Client hereunder, except for taxes imposed on VerdaVein's income. When VerdaVein has the legal obligation to pay or collect such taxes, the appropriate amount shall be invoiced to and paid by Client unless Client provides VerdaVein with a valid tax exemption certificate authorized by the appropriate taxing authority.</p>
+            </div>
+            
+            <h2>5. Intellectual Property</h2>
+            <div class="terms-point">
+                <h4>5.1 Service Content</h4>
+                <p>The Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of VerdaVein and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of VerdaVein. All designs, drawings, and specifications created by VerdaVein remain our intellectual property.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>5.2 System Designs</h4>
+                <p>All irrigation system designs, drawings, specifications, and other technical documents prepared by VerdaVein ("Design Documents") are instruments of our service and are not intended or represented to be error-free. Client may use Design Documents only for the Project described in the service agreement. VerdaVein retains all property rights, including copyrights, in the Design Documents and all copies thereof. Client shall not reuse Design Documents on extensions of the Project or other projects without VerdaVein's written permission.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>5.3 Feedback</h4>
+                <p>You grant us an unlimited, irrevocable, perpetual, transferable, fully paid, royalty-free license to use any feedback, comments, or suggestions you send us or post in public forums about the Service ("Feedback") in any manner without any obligation or compensation to you. We may modify and incorporate such Feedback into our products and services without restriction. By providing Feedback, you represent that you own or have the necessary rights to submit the Feedback and that the Feedback does not violate any third-party rights.</p>
+            </div>
+            
+            <h2>6. Warranties & Disclaimers</h2>
+            <div class="terms-point">
+                <h4>6.1 Service Warranty</h4>
+                <p>VerdaVein warrants that all services will be performed in a professional and workmanlike manner consistent with generally accepted industry standards. Specific warranty terms for materials and workmanship will be outlined in individual service agreements, typically ranging from 1-5 years depending on the component. This warranty does not cover damage caused by misuse, neglect, acts of nature, or unauthorized modifications. Warranty claims must be made in writing within the warranty period.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>6.2 Limitation of Liability</h4>
+                <p>In no event shall VerdaVein, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>6.3 General Disclaimer</h4>
+                <p>Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. VerdaVein expressly disclaims all warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose and non-infringement. VerdaVein makes no warranty that (i) the Service will meet your requirements; (ii) the Service will be uninterrupted, timely, secure or error-free; (iii) the results that may be obtained from the use of the Service will be accurate or reliable.</p>
+            </div>
+            
+            <h2>7. Termination</h2>
+            <div class="terms-point">
+                <h4>7.1 Termination by User</h4>
+                <p>You may stop using our Service at any time. For ongoing service contracts, termination policies will be specified in the individual service agreement. Typically, clients may terminate service agreements with written notice, subject to payment for work completed and materials ordered, plus any applicable cancellation fees. Digital accounts may be deactivated through account settings or by contacting customer service. Certain provisions of these Terms will survive termination, including ownership provisions, warranty disclaimers, and limitations of liability.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>7.2 Termination by VerdaVein</h4>
+                <p>We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms. If you wish to terminate your account, you may simply discontinue using the Service. All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>7.3 Effect of Termination</h4>
+                <p>Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service. Termination of service contracts may involve removal of access to certain features or content. We are not liable to you or any third party for any termination of your access to the Service. Any outstanding balance owed to VerdaVein for services rendered will become immediately due and payable upon termination.</p>
+            </div>
+            
+            <h2>8. Governing Law</h2>
+            <div class="terms-point">
+                <h4>8.1 Applicable Law</h4>
+                <p>These Terms shall be governed and construed in accordance with the laws of New York, United States, without regard to its conflict of law provisions. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the state and federal courts located in New York County, New York. The United Nations Convention on Contracts for the International Sale of Goods does not apply to these Terms. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>8.2 Dispute Resolution</h4>
+                <p>Before filing any legal action, both parties agree to attempt to resolve any dispute through good faith negotiations. If negotiations fail, disputes shall be resolved through binding arbitration administered by the American Arbitration Association in accordance with its Commercial Arbitration Rules. Judgment on the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. The prevailing party in any dispute shall be entitled to recover its reasonable attorneys' fees and costs.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>8.3 Class Action Waiver</h4>
+                <p>Both parties agree that any arbitration or proceeding shall be limited to the dispute between us individually. To the full extent permitted by law: (a) no arbitration or proceeding shall be joined with any other; (b) there is no right or authority for any dispute to be arbitrated or resolved on a class-action basis or to utilize class action procedures; and (c) there is no right or authority for any dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</p>
+            </div>
+            
+            <h2>9. Miscellaneous</h2>
+            <div class="terms-point">
+                <h4>9.1 Force Majeure</h4>
+                <p>VerdaVein shall not be liable for any failure or delay in performance due to events beyond our reasonable control, including but not limited to acts of God, natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, shortages of transportation facilities, fuel, energy, labor or materials, epidemics, pandemics, or any failure of public utilities or telecommunications systems. In such events, VerdaVein may suspend or terminate the affected services without liability.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>9.2 Severability</h4>
+                <p>If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. The invalid or unenforceable provision shall be deemed superseded by a valid, enforceable provision that most closely matches the intent of the original provision. The parties agree to replace any invalid provision with a valid provision which achieves, to the extent possible, the economic, legal and commercial objectives of the invalid provision.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>9.3 Entire Agreement</h4>
+                <p>These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have had between us regarding the Service. No waiver of any term of these Terms shall be deemed a further or continuing waiver of such term or any other term, and our failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision. These Terms create no third-party beneficiary rights.</p>
+            </div>
+            
+            <div class="terms-point">
+                <h4>9.4 Contact Information</h4>
+                <p>Questions about these Terms should be sent to us at legal@verdavein.com or by mail to VerdaVein Irrigation Systems, East 14th Street, New York, NY 10003, United States. Our legal department can be reached by phone at (212) 555-7878 during normal business hours (9am-5pm EST, Monday-Friday). We aim to respond to all legal inquiries within 10 business days of receipt. For service-related questions, please use our general contact information.</p>
+            </div>
+            
+            <div class="disclaimer">
+                <h3>Important Note</h3>
+                <p>These Terms of Service govern your general use of our website and services. Specific projects and services may be subject to additional terms outlined in individual service agreements. This document was prepared with legal counsel to ensure compliance with applicable laws and regulations. We recommend you review these Terms periodically as we may update them to reflect changes in our business practices or legal requirements. Your continued use of our Service after any changes constitutes acceptance of the new Terms.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">VerdaVein</div>
+                <p>Green. Water. Harmony.</p>
+                <p>Premium irrigation systems rooted in ancient wisdom, designed for modern sustainability.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#services">Our Services</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#gallery">Project Gallery</a></li>
+                    <li><a href="index.html#testimonials">Client Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">GDPR Compliance</a></li>
+                    <li><a href="#">CCPA Notice</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> East 14th Street, New York, NY 10003, United States</p>
+                <p><i class="fas fa-phone"></i> (212) 555-7878</p>
+                <p><i class="fas fa-envelope"></i> info@verdavein.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm EST</p>
+                <p><i class="fas fa-calendar"></i> Saturday: By appointment only</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 VerdaVein Irrigation Systems. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
